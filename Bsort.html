@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            var numArray = []
+
+            function RandGen(){
+                var R
+                for(var i=0; i<10; i++){
+                    R = Math.floor(Math.random() * 50);
+                    numArray.push(R)
+                }
+                
+                console.log(numArray)
+
+            }
+            function SmallToLarge(){
+                bblSortAscending()
+            idDivOutput.innerHTML=numArray
+
+           alert(numArray[9]-numArray[0])
+            }
+
+            function LargeToSmall(){
+                blSortDescending()
+            idDivOutput.innerHTML=numArray
+
+            alert(numArray[0]+numArray[9])
+            }
+
+// Bubble sort Implementation using Javascript
+// Creating the bblSort function
+function bblSortAscending(){
+	
+    for(var i = 0; i < numArray.length; i++){
+        
+    // Last i elements are already in place
+    for(var j = 0; j < ( numArray.length - i -1 ); j++){
+        
+        // Checking if the item at present iteration
+        // is greater than the next iteration
+        if(numArray[j] > numArray[j+1]){
+            
+        // If the condition is true then swap them
+        var temp = numArray[j]
+        numArray[j] = numArray[j + 1]
+        numArray[j+1] = temp
+        }
+    }
+    }
+    // Print the sorted array
+    // return numArray;
+    }
+
+    // Bubble sort Implementation using Javascript
+// Creating the bblSort function
+function blSortDescending(){
+	for( i=0;i<numArray.length-1;i++) {
+    for( j=0;j<numArray.length-1;j++){
+        if(numArray[j]<numArray[j+1])
+        {
+            temp = numArray[j];
+            numArray[j]=numArray[j+1];
+            numArray[j+1]=temp;
+        }
+    }
+}
+}
+    
+    
+        </script>
+
+        <body onLoad="RandGen()">
+            <input type="button" value="StL" onclick="SmallToLarge()">
+            <input type="button" value="LtS" onclick="LargeToSmall()">
+           <div id="idDivOutput">
+
+
+            </div>
+        </body>
+    </head>
+</html>
